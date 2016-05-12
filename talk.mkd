@@ -60,6 +60,12 @@ layout: false
 
 ## Namespace
 
+"Will somebody clean up the butts?" [citation needed]
+
+- This has a different meaning in the namespace "nursery"
+  and in the namespace "cigarette factory"
+- "Namespaces are one honking great idea -- let's do more of those!" [Zen of Python]
+
 ---
 
 ## API
