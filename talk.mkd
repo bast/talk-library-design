@@ -17,13 +17,35 @@ layout: false
 
 ## Loose coupling, high cohesion
 
+- Minimize dependencies
+- Do one thing only and do it well
+- Non-cohesive code has unnecessary dependencies
+- Cohesive code API changes less
+
+---
+
+## Surface area
+
+- As we break up the code into libraries
+  the surface area increases
+
 ---
 
 ## Own development history
 
+- Decouple the development history
+- Each unit should have its own Git history/repository
+
 ---
 
 ## C interface
+
+- English is to humans what C is to programs
+- C is the common language
+- Basically any language can talk to a C interface
+- Do create a C interface for your code
+- Better than Fortran interface (the latter imposes compilation
+  order and introduces compiler dependence)
 
 ---
 
@@ -110,7 +132,3 @@ use mymodule, only: function1, function2
 ---
 
 ## Complexity/viscosity
-
----
-
-## Surface area
