@@ -1,0 +1,77 @@
+name: inverse
+layout: true
+class: center, middle, inverse
+
+---
+
+# Library design in a modular world
+
+## Radovan Bast
+
+Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Code examples: [OSI](http://opensource.org)-approved [MIT license](http://opensource.org/licenses/mit-license.html).
+
+---
+
+layout: false
+
+## Loose coupling, high cohesion
+
+---
+
+## Own development history
+
+---
+
+## C interface
+
+---
+
+## Testable on its own
+
+---
+
+## Clear API
+
+- Isolated
+- Documented
+- Versioned
+- Tested
+
+---
+
+## Encapsulation
+
+- Hide internals by language or by convention
+
+---
+
+## Core language
+
+---
+
+## Enemy of the state
+
+---
+
+## Keep I/O on the outside and connected
+
+---
+
+## Namespace
+
+---
+
+## API
+
+- stateless
+- new/compute/delete
+- context API
+
+---
+
+## Complexity/viscosity
+
+---
+
+## Surface area
