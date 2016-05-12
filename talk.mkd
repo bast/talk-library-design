@@ -68,9 +68,7 @@ layout: false
 
 ---
 
-## Namespaces
-
-### Python
+## Namespace protection in Python
 
 - Bad
 ```python
@@ -82,7 +80,14 @@ from mymodule import *
 from mymodule import function1, function2
 ```
 
-### Fortran
+- Also good
+```python
+import mymodule
+```
+
+---
+
+## Namespace protection in Fortran
 
 - Bad
 ```fortran
