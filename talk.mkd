@@ -260,10 +260,9 @@ from mymodule import function1, function2
 ```python
 import mymodule
 ```
-
+- Better for people writing code (avoids name collision)
+- Better for people reading code (easier to see where function come from)
 - Consider importing modules at function level and not at module level
-
-TODO: explain why, show examples why not
 
 ---
 
@@ -279,9 +278,8 @@ use mymodule
 use mymodule, only: function1, function2
 ```
 
+- Same reasoning as in Python
 - Consider importing modules at function level and not at module level
-
-TODO: explain why, show examples why not
 
 ---
 
