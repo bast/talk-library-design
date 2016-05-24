@@ -97,7 +97,7 @@ layout: false
 - "Python has no locked doors; it's a consenting adults language.
   If you open the door you're responsible for what you see." [R. Hettinger]
 - Interface exposed in a separate file
-- Clients are interested in "what", often not so much in "how"
+- Clients are interested in "what", often not so much in "how" (more about performance later)
 
 ### Documentation
 
@@ -151,6 +151,8 @@ layout: false
 ]
 .right-column[
 ### Strive for pure functions, fear the state
+
+TODO: add example for stateful/stateless
 
 - Pure functions do not have side effects
 - Side effects lead to bugs and increase complexity
@@ -243,6 +245,8 @@ import mymodule
 
 - Consider importing modules at function level and not at module level
 
+TODO: explain why, show examples why not
+
 ---
 
 ## Namespace protection in Fortran
@@ -258,6 +262,8 @@ use mymodule, only: function1, function2
 ```
 
 - Consider importing modules at function level and not at module level
+
+TODO: explain why, show examples why not
 
 ---
 
@@ -295,7 +301,7 @@ f = ddot(1000, vector_a, 1, vector_b, 1)
 
 ## API with state
 
-- We split API into epochs
+- We split API into epochs (TODO: clarify epochs)
     - new/init
     - compute
     - delete/finalize
@@ -406,6 +412,14 @@ fftw_destroy_plan(p);
 
 ---
 
+## There is no one-size-fits-all model
+
+- Stateless works wonders when there is no need for a global initialization
+- Exclusive state should work when creating more than one context does not make sense
+- Context-aware works when multiple instances might be needed
+
+---
+
 ## High-level and low-level API
 
 ### Scared of asking the client to pass 20 parameters every time?
@@ -444,7 +458,7 @@ def deposit_explicit(account, amount, currency, date, message, ...):
 
 - Forces you to create a clean interface (good)
 - Nice byproduct: you have a Python interface (good)
-- Encourages dynamic library (good)
+- Encourages dynamic library (good; TODO: motivate why)
 - You can write and prototype tests without recompiling the library (good)
 - Allows you to use the wonderfully lightweight [pytest](http://pytest.org) (no more excuses for the Fortran crowd)
 - Example: https://github.com/bast/context-api-example
