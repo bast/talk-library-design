@@ -15,12 +15,42 @@ Code examples: [OSI](http://opensource.org)-approved [MIT license](http://openso
 
 layout: false
 
-## Loose coupling, high cohesion
+## Coupling and cohesion
+
+- Strong coupling
+
+![](img/strong-coupling.svg)
+
+- Loose coupling
+    - Easier to reassemble
+    - Easier to understand
+
+![](img/loose-coupling.svg)
+
+---
+
+## Coupling and cohesion
+
+- Low cohesion: difficult to maintain, test, reuse, or even understand
+    - Non-cohesive code has unnecessary dependencies
+    - Swiss army knife modules
+
+![](img/low-cohesion.svg)
+
+- High cohesion: associated with robustness, reliability, reusability, and understandability
+    - Do one thing only and do it well
+    - API of cohesive code changes less over time
+
+![](img/high-cohesion.svg)
+
+---
+
+## Coupling and cohesion
 
 - Minimize dependencies
-- Do one thing only and do it well
-- Non-cohesive code has unnecessary dependencies
-- Cohesive code API changes less
+- Prefer loose coupling and high cohesion
+
+<img src="img/wires.jpg" style="width: 500px;"/>
 
 ---
 
@@ -84,8 +114,8 @@ layout: false
 
 "Will somebody clean up the butts?" [citation needed]
 
-- This has a different meaning in the namespace "nursery"
-  and in the namespace "cigarette factory"
+- This has a different meaning in the namespace "cigarette factory"
+  and in the namespace "nursery"
 - "Namespaces are one honking great idea -- let's do more of those!" [Zen of Python]
 
 ---
@@ -107,6 +137,8 @@ from mymodule import function1, function2
 import mymodule
 ```
 
+- Consider importing modules at function level and not at module level
+
 ---
 
 ## Namespace protection in Fortran
@@ -121,13 +153,38 @@ use mymodule
 use mymodule, only: function1, function2
 ```
 
+- Consider importing modules at function level and not at module level
+
 ---
 
 ## API
 
-- stateless
-- new/compute/delete
-- context API
+### We will discuss three API examples
+
+- Stateless API
+- API with state: new/compute/delete
+- API with context
+
+---
+
+## Stateless API
+
+### Example: BLAS
+
+```fortran
+f = ddot(1000, vector_a, 1, vector_b, 1)
+```
+
+- From the client perspective there is no state
+- Sometimes even "stateless" libraries have internal state (caching, memoization)
+
+### Advantage for clients
+
+- We only need to consider this one call to understand and predict what will happen
+
+### Disadvantage for the library
+
+- The library may need to recompute expensive intermediates at every call
 
 ---
 
