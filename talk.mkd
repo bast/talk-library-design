@@ -15,6 +15,33 @@ Code examples: [OSI](http://opensource.org)-approved [MIT license](http://openso
 
 layout: false
 
+## Modular design is good
+
+### Examples
+
+- Lego
+- Car manufacturing
+- Design of your phone or laptop
+- Modular composition when you order a laptop
+- Success of USB
+- Study programs
+
+### Advantages
+
+- Composability
+- Leveraging functionality
+- Separation of concerns
+
+---
+
+## Library design in a modular world: how?
+
+<img src="img/joe-paradiso-modular-synth-front.png" style="width: 500px;"/>
+
+- Copyright Joe Paradiso (MIT)
+
+---
+
 ## Coupling and cohesion
 
 - Strong coupling
@@ -176,16 +203,135 @@ f = ddot(1000, vector_a, 1, vector_b, 1)
 ```
 
 - From the client perspective there is no state
-- Sometimes even "stateless" libraries have internal state (caching, memoization)
+- Sometimes libraries with "stateless" API have internal state (caching, memoization)
 
-### Advantage for clients
+### Advantage
 
 - We only need to consider this one call to understand and predict what will happen
 
-### Disadvantage for the library
+### Disadvantages
 
 - The library may need to recompute expensive intermediates at every call
+- Typically many arguments
+
+---
+
+## API with state
+
+- We split API into epochs
+    - new/init
+    - compute
+    - delete/finalize
+
+### Example
+
+- MPI
+
+### Advantage
+
+- We can avoid possibly costly initialization at each compute call
+
+### Disadvantages
+
+- Order matters
+- We have to remember to clean up
+- Only one context at a time
+
+---
+
+## API with state
+
+### Another example: we program our own bank
+
+```python
+bank_new()
+
+bank_deposit(100.0)
+bank_deposit(100.0)
+
+bank_withdraw(50.0)
+
+my_balance = bank_get_balance()
+
+bank_free()
+```
+
+- Problem: We have to close the account before opening a new one
+
+---
+
+## API with state
+
+### It would be great to have more contexts
+
+```python
+account1 = bank_new()
+
+bank_deposit(account1, 100.0)
+bank_deposit(account1, 100.0)
+
+account2 = bank_new()
+
+bank_deposit(account2, 200.0)
+bank_deposit(account2, 200.0)
+
+bank_withdraw(account1, 50.0)
+
+balance1 = bank_get_balance(account1)
+balance2 = bank_get_balance(account2)
+
+bank_free(account1)
+bank_free(account2)
+```
+
+---
+
+## API with context
+
+- Allows multiple contexts open at the same time
+
+### Example: FFTW
+
+```c
+fftw_complex in[N], out[N];
+fftw_plan p;
+...
+p = fftw_create_plan(N, FFTW_FORWARD, FFTW_ESTIMATE);
+...
+fftw_one(p, in, out);
+...
+fftw_destroy_plan(p);
+```
+
+---
+
+## Context-aware API in different languages
+
+- Shows how to implement and use context-aware APIs in C++, Fortran, and Python
+  with a C interface.
+  Inspired by Armin Ronacher's
+  ["Beautiful Native Libraries"](http://lucumr.pocoo.org/2013/8/18/beautiful-native-libraries/):
+  https://github.com/bast/context-api-example
+
+```
+.
+|-- api
+|   |-- example.h   (C interface)
+|   `-- example.py  (Python interface)
+|-- src
+|   |-- bank.cpp    (C++ library)
+|   |-- bank.f90    (Fortran library)
+|   `-- bank.h      (C++ library)
+`-- test
+    |-- test.cpp    (C++ client)
+    |-- test.f90    (Fortran client)
+    `-- test.py     (Python client; automatically tested)
+```
 
 ---
 
 ## Complexity/viscosity
+
+---
+
+## Memory cleanup
