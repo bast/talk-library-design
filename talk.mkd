@@ -144,6 +144,29 @@ layout: false
 
 ---
 
+## Stateful vs. stateless code
+
+### State
+
+- Imagine your program stops now and you need to checkpoint everything for a future restart
+- This information is the state of the program
+
+### Pure/immutable/stateless
+
+- Mathematical functions
+- Functions which do not mutate the state
+- Can you predict the result of a function by only looking at the function call?
+
+### Impure/mutable/stateful
+
+- Code which mutates the global state
+    - Global variables
+    - I/O
+    - Order matters
+    - Need to avoid race conditions
+
+---
+
 ## Enemy of the state
 
 .left-column[
@@ -151,8 +174,6 @@ layout: false
 ]
 .right-column[
 ### Strive for pure functions, fear the state
-
-TODO: add example for stateful/stateless
 
 - Pure functions do not have side effects
 - Side effects lead to bugs and increase complexity
