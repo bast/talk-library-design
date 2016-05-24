@@ -261,7 +261,7 @@ from mymodule import function1, function2
 import mymodule
 ```
 - Better for people writing code (avoids name collision)
-- Better for people reading code (easier to see where function come from)
+- Better for people reading code (easier to see where functions come from)
 - Consider importing modules at function level and not at module level
 
 ---
