@@ -155,15 +155,12 @@ layout: false
 
 - Mathematical functions
 - Functions which do not mutate the state
-- Can you predict the result of a function by only looking at the function call?
+- Referentially transparent
 
 ### Impure/mutable/stateful
 
 - Code which mutates the global state
-    - Global variables
-    - I/O
-    - Order matters
-    - Need to avoid race conditions
+- Referentially opaque
 
 ---
 
