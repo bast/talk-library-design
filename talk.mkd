@@ -175,6 +175,8 @@ layout: false
 - Unit test the inside
 - Regression test the shell
 
+![](img/melons.svg)
+
 ---
 
 ## Namespaces
