@@ -133,7 +133,47 @@ layout: false
 
 ---
 
-## Keep I/O on the outside and connected
+## One way to look at your code
+
+![](img/main-inside.svg)
+
+- The main function calls other functions
+
+---
+
+## Where to deal with the state? Typical questions:
+
+- Where to do file I/O?
+    - In the main function?
+    - Should we pass the file name and open the files deep down in functions?
+    - Should we open the file and pass the file handle?
+    - Should we read the data and pass the data?
+- Where to keep "global" data?
+    - In the main function?
+    - In a Fortran common block?
+    - In a Fortran module?
+    - In functions with save attributes?
+
+---
+
+## Another way to look at your code
+
+![](img/main-outside.svg)
+
+- The main function ("program" in Fortran) is on the outside shell
+
+---
+
+## Recommendations
+
+- Keep I/O on the outside and connected
+- Always read/write on the outside and pass data
+- Do not read/write deep down inside the code
+- Keep the inside of your code pure/stateless
+- Move all the state "up" to the caller
+- Keep the stateful outside shell thin
+- Unit test the inside
+- Regression test the shell
 
 ---
 
@@ -335,3 +375,11 @@ fftw_destroy_plan(p);
 ---
 
 ## Memory cleanup
+
+---
+
+## High-level and low-level API
+
+---
+
+## Testing
