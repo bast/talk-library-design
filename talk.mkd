@@ -158,6 +158,8 @@ layout: false
     - Simplify
     - Refactor
     - Optimize
+
+### But we need to deal with state somewhere
 ]
 
 ---
@@ -379,10 +381,9 @@ fftw_destroy_plan(p);
 ## Context-aware API in different languages
 
 - Shows how to implement and use context-aware APIs in C++, Fortran, and Python
-  with a C interface.
-  Inspired by Armin Ronacher's
-  ["Beautiful Native Libraries"](http://lucumr.pocoo.org/2013/8/18/beautiful-native-libraries/):
-  https://github.com/bast/context-api-example
+  with a C interface: https://github.com/bast/context-api-example
+- Inspired by Armin Ronacher's
+  ["Beautiful Native Libraries"](http://lucumr.pocoo.org/2013/8/18/beautiful-native-libraries/)
 
 ```
 .
