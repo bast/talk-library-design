@@ -73,6 +73,7 @@ layout: false
     - Do one thing only and do it well
     - API of cohesive code changes less over time
     - Power of the Unix command line is a set of highly cohesive tools
+    - Microservices
 
 ![](img/high-cohesion.svg)
 
