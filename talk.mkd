@@ -317,7 +317,7 @@ f = ddot(1000, vector_a, 1, vector_b, 1)
 
 ## API with state
 
-- We split API into epochs (TODO: clarify epochs)
+- We split API into 3 phases/epochs
     - new/init
     - compute
     - delete/finalize
@@ -474,7 +474,7 @@ def deposit_explicit(account, amount, currency, date, message, ...):
 
 - Forces you to create a clean interface (good)
 - Nice byproduct: you have a Python interface (good)
-- Encourages dynamic library (good; TODO: motivate why)
-- You can write and prototype tests without recompiling the library (good)
+- Encourages dynamic library (good)
+- You can write and prototype tests without recompiling/relinking the library (good)
 - Allows you to use the wonderfully lightweight [pytest](http://pytest.org) (no more excuses for the Fortran crowd)
 - Example: https://github.com/bast/context-api-example
