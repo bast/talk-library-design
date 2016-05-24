@@ -4,7 +4,7 @@ class: center, middle, inverse
 
 ---
 
-# Library design in a modular world
+# Library design the hard way
 
 ## Radovan Bast
 
