@@ -91,7 +91,10 @@ layout: false
 
 ### Encapsulation
 
-- Hide internals by language or by convention
+- Hide internals by language or by convention (header file in C/C++,
+  public/private in Fortran, underscores in Python)
+- "Python has no locked doors; it's a consenting adults language.
+  If you open the door you're responsible for what you see." [R. Hettinger]
 - Interface exposed in a separate file
 - Clients are interested in "what", often not so much in "how"
 
