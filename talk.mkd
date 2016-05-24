@@ -97,7 +97,7 @@ layout: false
 
 ### Documentation
 
-- Separate the "what" and "how"
+- Separate the "what it can do" from "how is it implemented"
 - Documented API
 - Versioned API ([semantic](http://semver.org) or [sentimental](http://sentimentalversioning.org)
   or [romantic](https://github.com/jashkenas/backbone/issues/2888#issuecomment-29076249) versioning)
