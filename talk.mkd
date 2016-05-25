@@ -113,8 +113,7 @@ layout: false
 ### Testable on its own
 
 - Sharpens interfaces
-- Once you start to test your library you really see the interfaces
-  and modularity
+- Once you start testing your library you really see the coupling and cohesion
 
 ### Built on its own
 
