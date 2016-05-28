@@ -31,9 +31,9 @@ layout: false
 
 ### Advantages
 
+- Separation of concerns
 - Composability
 - Leveraging functionality
-- Separation of concerns
 
 ---
 
@@ -97,7 +97,7 @@ layout: false
 - "Python has no locked doors; it's a consenting adults language.
   If you open the door you're responsible for what you see." [R. Hettinger]
 - Interface exposed in a separate file
-- Clients are interested in "what", often not so much in "how" (more about performance later)
+- Expose the "what", hide the "how"
 
 ### Documentation
 
@@ -147,7 +147,8 @@ layout: false
 
 ### State
 
-- Imagine your program stops now and you need to checkpoint everything for a future restart
+- Imagine your program stops now and you need
+  to checkpoint everything for a future restart
 - This information is the state of the program
 
 ### Pure/immutable/stateless
