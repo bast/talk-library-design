@@ -141,6 +141,10 @@ layout: false
 - For single-core high-performance use C or C++ or Fortran
 - With an eccentric language you risk to reduce the number of contributors
 
+### Communicate through memory or through files?
+
+- Through memory if you want your library to be used by others
+
 ---
 
 ## Stateful vs. stateless code
