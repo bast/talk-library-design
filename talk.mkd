@@ -466,6 +466,7 @@ def deposit_explicit(account, amount, currency, date, message, ...):
 
 ## Complexity/viscosity
 
+- Simplicity is hard
 - Writing modular code is hard
 - As we break up the code into libraries the surface area increases
 - Investment with late but huge return
